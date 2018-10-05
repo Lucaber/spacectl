@@ -23,6 +23,7 @@ type SpacesClient interface {
 	ListVirtualHostsByStage(spaceID, stage string) (VirtualHostList, error)
 	UpdateVirtualHost(spaceID, stage string, vhost VirtualHost) (*VirtualHost, error)
 	DeleteVirtualHost(spaceID, stage, hostname string) error
+	ListDatabaseUsersByStage(spaceID, stage string) (DatabaseUserList, error)
 }
 
 func NewSpacesClient(client *lowlevel.SpacesLowlevelClient, logger *log.Logger) SpacesClient {
